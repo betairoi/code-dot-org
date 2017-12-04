@@ -25,11 +25,17 @@ export default () => {
 
   if ($('.feature_project').length) {
     if (dashboard.project.isProjectLevel()) {
-      //TODO: have some way to check if the project is featured or not, then
-      // conditionally set the button text and click function.
-      $('.feature_project').html($('<button id="feature" class="btn btn-default btn-sm">Feature in gallery</button>'));
-    } else {
-      $('.feature_project').html($('<button id="feature" class="btn btn-default btn-sm">Stop featuring in gallery</button>'));
+      console.log("project", dashboard.project);
+      var featured = false;
+      //FeaturedProject.where(project_id: dashboard.project.getCurrentId()).exists?
+
+      // storage_decrypt_channel_id(dashboard.project.getCurrentId())
+
+      if (featured) {
+        $('.feature_project').html($('<button id="feature" class="btn btn-default btn-sm">Stop featuring in gallery</button>'));
+      } else {
+        $('.feature_project').html($('<button id="feature" class="btn btn-default btn-sm">Feature in gallery</button>'));
+      }
     }
   }
 
