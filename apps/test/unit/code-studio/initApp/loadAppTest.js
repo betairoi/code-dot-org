@@ -86,6 +86,7 @@ describe('loadApp.js', () => {
   });
 
   it('loads attempt stored under server level id', (done) => {
+    delete window.appOptions;
     const appOptionsData = document.createElement('script');
     appOptionsData.setAttribute('data-appoptions', JSON.stringify(appOptions));
     document.body.appendChild(appOptionsData);
@@ -100,6 +101,7 @@ describe('loadApp.js', () => {
   });
 
   it('loads attempt stored under project server level id for template backed level', (done) => {
+    delete window.appOptions;
     appOptions.serverProjectLevelId = SERVER_PROJECT_LEVEL_ID;
     const appOptionsData = document.createElement('script');
     appOptionsData.setAttribute('data-appoptions', JSON.stringify(appOptions));
@@ -115,6 +117,7 @@ describe('loadApp.js', () => {
   });
 
   it('does not load a last attempt when viewing a solution', (done) => {
+    delete window.appOptions;
     const appOptionsData = document.createElement('script');
     appOptionsData.setAttribute('data-appoptions', JSON.stringify(appOptions));
     document.body.appendChild(appOptionsData);
@@ -136,6 +139,7 @@ describe('loadApp.js', () => {
   });
 
   it('does not load a last attempt when viewing a student solution', (done) => {
+    delete window.appOptions;
     const appOptionsData = document.createElement('script');
     appOptionsData.setAttribute('data-appoptions', JSON.stringify(appOptions));
     document.body.appendChild(appOptionsData);
